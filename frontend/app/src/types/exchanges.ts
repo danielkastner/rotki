@@ -23,7 +23,8 @@ export enum SupportedExchange {
   FTX = 'ftx',
   FTXUS = 'ftxus',
   INDEPENDENTRESERVE = 'independentreserve',
-  GEMINI = 'gemini'
+  GEMINI = 'gemini',
+  GATEIO = 'gateio'
 }
 
 export const SupportedExchangeType = z.nativeEnum(SupportedExchange);

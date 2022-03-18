@@ -10,6 +10,7 @@ from rotkehlchen.assets.asset import (
     WORLD_TO_COINBASE_PRO,
     WORLD_TO_CRYPTOCOM,
     WORLD_TO_FTX,
+    WORLD_TO_GATEIO,
     WORLD_TO_GEMINI,
     WORLD_TO_ICONOMI,
     WORLD_TO_KRAKEN,
@@ -746,6 +747,7 @@ KUCOIN_TO_WORLD = {v: k for k, v, in WORLD_TO_KUCOIN.items()}
 ICONOMI_TO_WORLD = {v: k for k, v in WORLD_TO_ICONOMI.items()}
 COINBASE_PRO_TO_WORLD = {v: k for k, v in WORLD_TO_COINBASE_PRO.items()}
 COINBASE_TO_WORLD = {v: k for k, v in WORLD_TO_COINBASE.items()}
+GATEIO_TO_WORLD = {v: k for k, v in WORLD_TO_GATEIO.items()}
 UPHOLD_TO_WORLD = {v: k for k, v in WORLD_TO_UPHOLD.items()}
 BITSTAMP_TO_WORLD = {v: k for k, v in WORLD_TO_BITSTAMP.items()}
 GEMINI_TO_WORLD = {v: k for k, v in WORLD_TO_GEMINI.items()}
@@ -927,6 +929,18 @@ def asset_from_coinbase(cb_name: str, time: Optional[Timestamp] = None) -> Asset
         raise DeserializationError(f'Got non-string type {type(cb_name)} for coinbase asset')
 
     name = COINBASE_TO_WORLD.get(cb_name, cb_name)
+    return symbol_to_asset_or_token(name)
+
+def asset_from_gateio(gate_name: str, time: Optional[Timestamp] = None) -> Asset:
+    """May raise:
+    - DeserializationError
+    - UnknownAsset
+    """
+
+    if not isinstance(gate_name, str):
+        raise DeserializationError(f'Got non-string type {type(gate_name)} for gate.io asset')
+
+    name = GATEIO_TO_WORLD.get(gate_name, gate_name)
     return symbol_to_asset_or_token(name)
 
 

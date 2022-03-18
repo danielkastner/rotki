@@ -39,6 +39,7 @@ SUPPORTED_EXCHANGES = [
     Location.COINBASE,
     Location.COINBASEPRO,
     Location.GEMINI,
+    Location.GATEIO,
     Location.ICONOMI,
     Location.KRAKEN,
     Location.KUCOIN,

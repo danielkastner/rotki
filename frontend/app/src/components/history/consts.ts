@@ -1,4 +1,4 @@
-import { TradeLocationData } from '@/components/history/type';
+import {TradeLocationData} from '@/components/history/type';
 import {
   EXCHANGE_BALANCER,
   EXCHANGE_BISQ,
@@ -17,9 +17,9 @@ import {
   TRADE_LOCATION_REALESTATE
 } from '@/data/defaults';
 import i18n from '@/i18n';
-import { TradeLocation } from '@/services/history/types';
-import { SupportedExchange } from '@/types/exchanges';
-import { assert } from '@/utils/assertions';
+import {TradeLocation} from '@/services/history/types';
+import {SupportedExchange} from '@/types/exchanges';
+import {assert} from '@/utils/assertions';
 
 export const tradeLocations: TradeLocationData[] = [
   {
@@ -208,6 +208,13 @@ export const tradeLocations: TradeLocationData[] = [
     identifier: EXCHANGE_BISQ,
     name: 'Bisq',
     icon: require('@/assets/images/bisq.svg'),
+    imageIcon: true,
+    exchange: true
+  },
+  {
+    identifier: SupportedExchange.GATEIO,
+    name: 'Gate.io',
+    icon: require('@/assets/images/placeholder.svg'),
     imageIcon: true,
     exchange: true
   },

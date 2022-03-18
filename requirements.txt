@@ -30,3 +30,6 @@ webargs==8.1.0
 
 #constraints
 setuptools==49.6.0  # constraint required by pyinstaller==4.8
+
+#api for exchanges
+gate-api==4.23.2

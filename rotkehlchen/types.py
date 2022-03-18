@@ -433,6 +433,7 @@ class Location(DBEnumMixIn):
     BITPANDA = 34
     BISQ = 35
     FTXUS = 36
+    GATEIO = 37
 
 
 class AssetMovementCategory(DBEnumMixIn):

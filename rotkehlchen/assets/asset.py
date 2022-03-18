@@ -476,6 +476,10 @@ WORLD_TO_COINBASE = {
     'STX-2': 'STX',
 }
 
+WORLD_TO_GATEIO = {
+
+}
+
 WORLD_TO_UPHOLD = {
     'BTC': 'BTC',
     strethaddress_to_identifier('0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9'): 'AAVE',

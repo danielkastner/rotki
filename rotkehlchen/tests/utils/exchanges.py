@@ -21,6 +21,7 @@ from rotkehlchen.exchanges.coinbasepro import Coinbasepro
 from rotkehlchen.exchanges.data_structures import AssetMovement, Trade
 from rotkehlchen.exchanges.exchange import ExchangeInterface
 from rotkehlchen.exchanges.ftx import Ftx
+from rotkehlchen.exchanges.gateio import Gate
 from rotkehlchen.exchanges.gemini import Gemini
 from rotkehlchen.exchanges.iconomi import Iconomi
 from rotkehlchen.exchanges.independentreserve import Independentreserve
@@ -551,6 +552,20 @@ def create_test_coinbase(
 ) -> Coinbase:
     mock = Coinbase(
         name='coinbase',
+        api_key=make_api_key(),
+        secret=make_api_secret(),
+        database=database,
+        msg_aggregator=msg_aggregator,
+    )
+    return mock
+
+
+def create_test_gate(
+        database: DBHandler,
+        msg_aggregator: MessagesAggregator,
+) -> Gate:
+    mock = Gate(
+        name='gateio',
         api_key=make_api_key(),
         secret=make_api_secret(),
         database=database,
